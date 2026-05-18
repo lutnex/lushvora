@@ -19,6 +19,10 @@
       --gold-light: #d4b896;
       --gold-glow: rgba(184, 149, 107, 0.25);
       --border: rgba(28, 25, 23, 0.08);
+      --max-width: 1100px;
+      --page-pad: clamp(1rem, 4.5vw, 1.75rem);
+      --section-pad: clamp(2rem, 6vw, 4rem);
+      --header-pad-y: clamp(1rem, 3vw, 1.5rem);
     }
 
     *, *::before, *::after {
@@ -27,6 +31,9 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: clip;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
 
     body {
@@ -36,6 +43,12 @@
       background: var(--cream);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+
+    img, svg {
+      max-width: 100%;
+      height: auto;
     }
 
     .bg-pattern {
@@ -62,6 +75,7 @@
       position: relative;
       z-index: 2;
       min-height: 100vh;
+      min-height: 100dvh;
     }
 
     /* Header */
@@ -69,37 +83,44 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 1100px;
+      gap: 0.75rem;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 1.5rem 1.75rem;
+      padding: var(--header-pad-y) var(--page-pad);
     }
 
     .logo {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.35rem;
+      font-size: clamp(1.15rem, 3.5vw, 1.35rem);
       font-weight: 600;
       letter-spacing: 0.02em;
       color: var(--charcoal);
       text-decoration: none;
+      flex-shrink: 0;
     }
 
     .badge {
-      font-size: 0.7rem;
+      font-size: clamp(0.6rem, 2vw, 0.7rem);
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold);
       background: rgba(184, 149, 107, 0.12);
-      padding: 0.45rem 0.9rem;
+      padding: 0.4rem 0.75rem;
       border-radius: 100px;
       border: 1px solid rgba(184, 149, 107, 0.3);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     /* Hero */
     .hero {
-      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 2rem 1.75rem 4rem;
+      padding: clamp(1.25rem, 4vw, 2rem) var(--page-pad) clamp(2rem, 5vw, 4rem);
       text-align: center;
     }
 
@@ -107,29 +128,34 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.75rem;
+      font-size: clamp(0.65rem, 2.2vw, 0.75rem);
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: clamp(0.875rem, 3vw, 1.5rem);
+      max-width: 100%;
     }
 
     .hero-label::before,
     .hero-label::after {
       content: '';
-      width: 24px;
+      width: clamp(12px, 4vw, 24px);
       height: 1px;
       background: var(--gold-light);
+      flex-shrink: 0;
     }
 
     h1 {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(3.2rem, 10vw, 5.5rem);
+      font-size: clamp(2.5rem, 11vw, 5.5rem);
       font-weight: 600;
       line-height: 1.05;
-      margin: 0 0 0.75rem;
+      margin: 0 0 clamp(0.5rem, 2vw, 0.75rem);
       letter-spacing: -0.02em;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     h1 span {
@@ -141,32 +167,45 @@
 
     .tagline {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      font-size: clamp(1.1rem, 3.5vw, 1.65rem);
       font-style: italic;
       color: var(--stone);
-      margin: 0 0 1.75rem;
+      margin: 0 0 clamp(1rem, 3.5vw, 1.75rem);
+      max-width: 100%;
     }
 
     .hero-desc {
+      width: 100%;
       max-width: 520px;
-      margin: 0 auto 2.5rem;
-      font-size: 1.05rem;
+      margin: 0 auto clamp(1.25rem, 4vw, 2.5rem);
+      font-size: clamp(0.95rem, 2.8vw, 1.05rem);
+      line-height: 1.65;
       color: var(--stone);
     }
 
+    .hero-offer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1rem, 3vw, 1.5rem);
+      width: 100%;
+      max-width: 22rem;
+    }
+
     .price-card {
-      display: inline-flex;
+      display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.25rem;
+      width: 100%;
       background: var(--ivory);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 1.75rem 3rem;
+      border-radius: clamp(16px, 4vw, 20px);
+      padding: clamp(1.25rem, 4vw, 1.75rem) clamp(1.5rem, 6vw, 3rem);
       box-shadow:
         0 1px 2px rgba(0, 0, 0, 0.04),
         0 24px 48px -12px rgba(28, 25, 23, 0.08);
-      margin-bottom: 2rem;
+      margin-bottom: 0;
     }
 
     .price-label {
@@ -179,7 +218,7 @@
 
     .price {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(2.5rem, 6vw, 3.25rem);
+      font-size: clamp(2.15rem, 7vw, 3.25rem);
       font-weight: 600;
       color: var(--gold);
       line-height: 1;
@@ -192,10 +231,12 @@
       gap: 0.6rem;
       position: relative;
       z-index: 30;
+      width: 100%;
+      min-height: 3.25rem;
       background: var(--charcoal);
       color: var(--ivory);
-      padding: 1rem 2rem;
-      font-size: 0.95rem;
+      padding: clamp(0.9rem, 3vw, 1rem) clamp(1.5rem, 5vw, 2rem);
+      font-size: clamp(0.9rem, 2.8vw, 0.95rem);
       font-weight: 600;
       letter-spacing: 0.02em;
       border-radius: 100px;
@@ -203,15 +244,27 @@
       border: none;
       cursor: pointer;
       pointer-events: auto;
+      touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       box-shadow: 0 4px 20px rgba(28, 25, 23, 0.2);
     }
 
-    .cta:hover {
-      background: #292524;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(28, 25, 23, 0.25);
+    .cta:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 2px 12px rgba(28, 25, 23, 0.18);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .cta:hover {
+        background: #292524;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(28, 25, 23, 0.25);
+      }
+
+      .cta:active {
+        transform: translateY(-1px) scale(0.99);
+      }
     }
 
     .cta svg {
@@ -226,37 +279,49 @@
 
     /* Sections */
     section {
-      max-width: 1100px;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 1.75rem 4rem;
+      padding: 0 var(--page-pad) var(--section-pad);
+    }
+
+    section:not(.hero) {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 360px;
     }
 
     .section-title {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.75rem;
+      font-size: clamp(1.45rem, 4.5vw, 1.75rem);
       font-weight: 600;
       text-align: center;
-      margin: 0 0 2rem;
+      margin: 0 0 clamp(1.25rem, 4vw, 2rem);
+    }
+
+    .section-title--left {
+      text-align: left;
+      margin-bottom: clamp(0.75rem, 3vw, 1rem);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: 1fr;
+      gap: clamp(0.875rem, 3vw, 1.25rem);
     }
 
     .card {
       background: var(--ivory);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.75rem;
+      border-radius: clamp(14px, 3vw, 16px);
+      padding: clamp(1.25rem, 4vw, 1.75rem);
       text-align: left;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .card:hover {
-      border-color: rgba(184, 149, 107, 0.35);
-      box-shadow: 0 12px 32px -8px rgba(28, 25, 23, 0.08);
+    @media (hover: hover) and (pointer: fine) {
+      .card:hover {
+        border-color: rgba(184, 149, 107, 0.35);
+        box-shadow: 0 12px 32px -8px rgba(28, 25, 23, 0.08);
+      }
     }
 
     .card-icon {
@@ -288,25 +353,18 @@
     .why-panel {
       background: var(--ivory);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 2.5rem;
+      border-radius: clamp(18px, 4vw, 24px);
+      padding: clamp(1.25rem, 4vw, 2.5rem);
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
+      grid-template-columns: 1fr;
+      gap: clamp(1.25rem, 4vw, 2.5rem);
       align-items: center;
-    }
-
-    @media (max-width: 700px) {
-      .why-panel {
-        grid-template-columns: 1fr;
-        padding: 1.75rem;
-      }
     }
 
     .why-panel p {
       margin: 0;
       color: var(--stone);
-      font-size: 1.05rem;
+      font-size: clamp(0.95rem, 2.8vw, 1.05rem);
       line-height: 1.7;
     }
 
@@ -320,8 +378,8 @@
       display: flex;
       align-items: flex-start;
       gap: 0.75rem;
-      padding: 0.65rem 0;
-      font-size: 0.95rem;
+      padding: clamp(0.45rem, 2vw, 0.65rem) 0;
+      font-size: clamp(0.875rem, 2.6vw, 0.95rem);
       color: var(--charcoal);
     }
 
@@ -342,13 +400,13 @@
 
     /* Trust */
     .trust {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+      justify-items: center;
+      gap: clamp(1.25rem, 4vw, 2rem);
+      padding: clamp(1.25rem, 4vw, 2rem) 0;
       border-top: 1px solid var(--border);
-      margin-top: 1rem;
+      margin-top: clamp(0.5rem, 2vw, 1rem);
     }
 
     .trust-item {
@@ -373,9 +431,16 @@
     /* Footer */
     footer {
       text-align: center;
-      padding: 2.5rem 1.75rem 3rem;
+      padding: clamp(1.5rem, 4vw, 2.5rem) var(--page-pad) clamp(2rem, 5vw, 3rem);
       color: var(--muted);
-      font-size: 0.875rem;
+      font-size: clamp(0.8rem, 2.5vw, 0.875rem);
+      line-height: 1.7;
+    }
+
+    footer p {
+      margin: 0;
+      max-width: 36rem;
+      margin-inline: auto;
     }
 
     footer strong {
@@ -386,6 +451,7 @@
     footer a {
       color: var(--gold);
       text-decoration: none;
+      word-break: break-all;
     }
 
     footer a:hover {
@@ -408,7 +474,7 @@
       to { opacity: 1; }
     }
 
-    .hero > *:not(.cta) {
+    .hero > *:not(.hero-offer) {
       animation: fadeUp 0.7s ease backwards;
     }
 
@@ -416,10 +482,70 @@
     h1 { animation-delay: 0.1s; }
     .tagline { animation-delay: 0.15s; }
     .hero-desc { animation-delay: 0.2s; }
-    .price-card { animation-delay: 0.25s; }
+
+    .hero-offer {
+      animation: fadeUp 0.7s ease 0.25s backwards;
+    }
 
     .hero .cta {
-      animation: fadeUpCta 0.7s ease 0.3s backwards;
+      animation: fadeUpCta 0.5s ease 0.35s backwards;
+    }
+
+    /* Tablet */
+    @media (min-width: 540px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-offer {
+        max-width: 24rem;
+      }
+    }
+
+    /* Laptop */
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .why-panel {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trust {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    /* Large monitors */
+    @media (min-width: 1200px) {
+      :root {
+        --max-width: 1140px;
+      }
+
+      .hero-offer {
+        max-width: 26rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .hero > *:not(.hero-offer),
+      .hero-offer,
+      .hero .cta {
+        animation: none;
+      }
+
+      .cta,
+      .card,
+      .cta svg {
+        transition: none;
+      }
     }
   </style>
 </head>
@@ -442,18 +568,20 @@
           A premium invented brand name evoking richness and natural beauty — sophisticated, memorable, and ready to become iconic in beauty and wellness.
         </p>
 
-        <div class="price-card">
-          <span class="price-label">Asking Price</span>
-          <span class="price">$12,680</span>
-        </div>
+        <div class="hero-offer">
+          <div class="price-card">
+            <span class="price-label">Asking Price</span>
+            <span class="price">$12,680</span>
+          </div>
 
-        <a
-          href="https://www.afternic.com/domain/lushvora.com"
-          class="cta"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Buy or make an offer on Afternic"
-        >Buy / Make Offer →</a>
+          <a
+            href="https://www.afternic.com/domain/lushvora.com"
+            class="cta"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Buy or make an offer on Afternic"
+          >Buy / Make Offer →</a>
+        </div>
       </section>
 
       <section>
@@ -485,7 +613,7 @@
       <section>
         <div class="why-panel">
           <div>
-            <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">Why This Name</h2>
+            <h2 class="section-title section-title--left">Why This Name</h2>
             <p>
               Lushvora blends lush abundance with a sense of aura and allure. It's short, pronounceable, and instantly positions any brand in the premium tier — without sounding generic or dated.
             </p>

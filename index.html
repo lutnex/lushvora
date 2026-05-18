@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lushvora.com — A premium domain for luxury beauty, wellness, and lifestyle brands. Available for acquisition.">
+  <title>Lushvora.com — Premium Domain for Sale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #faf7f2;
+      --ivory: #fffefb;
+      --charcoal: #1c1917;
+      --stone: #57534e;
+      --muted: #78716c;
+      --gold: #b8956b;
+      --gold-light: #d4b896;
+      --gold-glow: rgba(184, 149, 107, 0.25);
+      --border: rgba(28, 25, 23, 0.08);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--charcoal);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .bg-pattern {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, var(--gold-glow), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(184, 149, 107, 0.12), transparent),
+        radial-gradient(ellipse 50% 30% at 0% 80%, rgba(184, 149, 107, 0.08), transparent);
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .page {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.75rem;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(184, 149, 107, 0.12);
+      padding: 0.45rem 0.9rem;
+      border-radius: 100px;
+      border: 1px solid rgba(184, 149, 107, 0.3);
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.75rem 4rem;
+      text-align: center;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-label::before,
+    .hero-label::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold-light);
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(3.2rem, 10vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      font-style: italic;
+      color: var(--stone);
+      margin: 0 0 1.75rem;
+    }
+
+    .hero-desc {
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+      color: var(--stone);
+    }
+
+    .price-card {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.75rem 3rem;
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04),
+        0 24px 48px -12px rgba(28, 25, 23, 0.08);
+      margin-bottom: 2rem;
+    }
+
+    .price-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .price {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.5rem, 6vw, 3.25rem);
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 1rem 2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: 100px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      box-shadow: 0 4px 20px rgba(28, 25, 23, 0.2);
+    }
+
+    .cta:hover {
+      background: #292524;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(28, 25, 23, 0.25);
+    }
+
+    .cta svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s;
+    }
+
+    .cta:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.75rem 4rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 0 0 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      text-align: left;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(184, 149, 107, 0.35);
+      box-shadow: 0 12px 32px -8px rgba(28, 25, 23, 0.08);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(184, 149, 107, 0.12);
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--stone);
+      line-height: 1.55;
+    }
+
+    /* Why */
+    .why-panel {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 700px) {
+      .why-panel {
+        grid-template-columns: 1fr;
+        padding: 1.75rem;
+      }
+    }
+
+    .why-panel p {
+      margin: 0;
+      color: var(--stone);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .why-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .why-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.65rem 0;
+      font-size: 0.95rem;
+      color: var(--charcoal);
+    }
+
+    .why-list li::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(184, 149, 107, 0.15);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      border-radius: 50%;
+    }
+
+    /* Trust */
+    .trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+
+    .trust-item {
+      text-align: center;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-item span {
+      font-size: 0.9rem;
+      color: var(--stone);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.75rem 3rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    footer strong {
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero > * {
+      animation: fadeUp 0.7s ease backwards;
+    }
+
+    .hero-label { animation-delay: 0.05s; }
+    h1 { animation-delay: 0.1s; }
+    .tagline { animation-delay: 0.15s; }
+    .hero-desc { animation-delay: 0.2s; }
+    .price-card { animation-delay: 0.25s; }
+    .cta { animation-delay: 0.3s; }
+  </style>
+</head>
+<body>
+  <div class="bg-pattern" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="page">
+    <header>
+      <a href="#" class="logo">Lushvora</a>
+      <span class="badge">Available</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="hero-label">Premium Domain</p>
+        <h1><span>Lushvora.com</span></h1>
+        <p class="tagline">Luxury · Radiance · Elegance</p>
+        <p class="hero-desc">
+          A premium invented brand name evoking richness and natural beauty — sophisticated, memorable, and ready to become iconic in beauty and wellness.
+        </p>
+
+        <div class="price-card">
+          <span class="price-label">Asking Price</span>
+          <span class="price">$12,680</span>
+        </div>
+
+        <a href="mailto:acquisitions@lutnex.com?subject=Inquiry%3A%20Lushvora.com%20Domain%20Purchase" class="cta">
+          Inquire About Purchase
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </section>
+
+      <section>
+        <h2 class="section-title">Perfect For</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon">✦</div>
+            <h3>Luxury Skincare</h3>
+            <p>High-end serums, creams, and treatments that deserve a name as refined as the product.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">◇</div>
+            <h3>Wellness & Spa</h3>
+            <p>Retreats, holistic brands, and spa experiences rooted in radiance and renewal.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">◈</div>
+            <h3>Premium Haircare</h3>
+            <p>Salon lines, cosmetics, and beauty brands built for discerning customers.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">◎</div>
+            <h3>Lifestyle & Fashion</h3>
+            <p>Elegant lifestyle labels and fashion houses seeking a distinctive identity.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="why-panel">
+          <div>
+            <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">Why This Name</h2>
+            <p>
+              Lushvora blends lush abundance with a sense of aura and allure. It's short, pronounceable, and instantly positions any brand in the premium tier — without sounding generic or dated.
+            </p>
+          </div>
+          <ul class="why-list">
+            <li>Memorable, brandable, and unique</li>
+            <li>.com — the gold standard for credibility</li>
+            <li>Evokes luxury, nature, and glow</li>
+            <li>Works globally across English markets</li>
+            <li>Ready for immediate acquisition</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="trust">
+          <div class="trust-item">
+            <strong>Transfer</strong>
+            <span>Secure escrow available</span>
+          </div>
+          <div class="trust-item">
+            <strong>Inquiries</strong>
+            <span>Serious buyers only</span>
+          </div>
+          <div class="trust-item">
+            <strong>Status</strong>
+            <span>Available now</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <strong>Lushvora.com</strong> is available for immediate acquisition.<br>
+        Questions? <a href="mailto:acquisitions@lutnex.com">acquisitions@lutnex.com</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

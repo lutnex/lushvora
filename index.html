@@ -188,7 +188,10 @@
     .cta {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.6rem;
+      position: relative;
+      z-index: 30;
       background: var(--charcoal);
       color: var(--ivory);
       padding: 1rem 2rem;
@@ -199,6 +202,8 @@
       text-decoration: none;
       border: none;
       cursor: pointer;
+      pointer-events: auto;
+      -webkit-tap-highlight-color: transparent;
       transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
       box-shadow: 0 4px 20px rgba(28, 25, 23, 0.2);
     }
@@ -398,7 +403,12 @@
       }
     }
 
-    .hero > * {
+    @keyframes fadeUpCta {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hero > *:not(.cta) {
       animation: fadeUp 0.7s ease backwards;
     }
 
@@ -407,7 +417,10 @@
     .tagline { animation-delay: 0.15s; }
     .hero-desc { animation-delay: 0.2s; }
     .price-card { animation-delay: 0.25s; }
-    .cta { animation-delay: 0.3s; }
+
+    .hero .cta {
+      animation: fadeUpCta 0.7s ease 0.3s backwards;
+    }
   </style>
 </head>
 <body>
@@ -434,12 +447,13 @@
           <span class="price">$12,680</span>
         </div>
 
-        <a href="mailto:acquisitions@lutnex.com?subject=Inquiry%3A%20Lushvora.com%20Domain%20Purchase" class="cta">
-          Inquire About Purchase
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
+        <a
+          href="https://www.afternic.com/domain/lushvora.com"
+          class="cta"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Buy or make an offer on Afternic"
+        >Buy / Make Offer →</a>
       </section>
 
       <section>
